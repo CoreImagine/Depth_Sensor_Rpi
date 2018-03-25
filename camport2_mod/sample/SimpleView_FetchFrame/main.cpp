@@ -199,6 +199,8 @@ int main(int argc, char* argv[]) {
 
     //show IR val
     int32_t IR_value;
+    int32_t IR_off_val=0;
+    int32_t IR_on_val=100;
     ASSERT_OK( TYGetInt (hDevice, TY_COMPONENT_LASER, TY_INT_LASER_POWER, &IR_value));    printf("IR value is: ");
     printf("%" PRId32 "\n", IR_value);
     //
@@ -250,7 +252,12 @@ int main(int argc, char* argv[]) {
         if( err != TY_STATUS_OK ) {
             LOGD("... Drop one frame");
         } else {
+            //turn off IR
+	    ASSERT_OK( TYSetInt (hDevice, TY_COMPONENT_LASER, TY_INT_LASER_POWER, IR_off_val));
+            //handle frame
             frameHandler(&frame, &cb_data, forClientSockfd);
+	    //turn on IR
+            ASSERT_OK( TYSetInt (hDevice, TY_COMPONENT_LASER, TY_INT_LASER_POWER, IR_on_val));
         }
 
 //#ifdef DEVELOPER_MODE
