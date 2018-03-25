@@ -253,11 +253,11 @@ int main(int argc, char* argv[]) {
             LOGD("... Drop one frame");
         } else {
             //turn off IR
-	    ASSERT_OK( TYSetInt (hDevice, TY_COMPONENT_LASER, TY_INT_LASER_POWER, IR_off_val));
+	    //ASSERT_OK( TYSetInt (hDevice, TY_COMPONENT_LASER, TY_INT_LASER_POWER, IR_off_val));
             //handle frame
             frameHandler(&frame, &cb_data, forClientSockfd);
 	    //turn on IR
-            ASSERT_OK( TYSetInt (hDevice, TY_COMPONENT_LASER, TY_INT_LASER_POWER, IR_on_val));
+            //ASSERT_OK( TYSetInt (hDevice, TY_COMPONENT_LASER, TY_INT_LASER_POWER, IR_on_val));
         }
 
 //#ifdef DEVELOPER_MODE
