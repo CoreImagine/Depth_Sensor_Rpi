@@ -35,6 +35,8 @@ sys/socket.h
 -
 netinet/in.h
 -
+inttypes.h
+-
 
 /home/pi/dept_upload/camport2_mod/sample/common/DepthRender.hpp
 opencv2/opencv.hpp

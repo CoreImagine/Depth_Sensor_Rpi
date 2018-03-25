@@ -6,6 +6,7 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <inttypes.h>	//used to print int32_t
 
 #undef DEVELOPER_MODE
 
@@ -198,7 +199,8 @@ int main(int argc, char* argv[]) {
 
     //show IR val
     int32_t IR_value;
-    ASSERT_OK( TYGetInt (hDevice, TY_COMPONENT_LASER, TY_INT_LASER_POWER, &IR_value));    printf("IR val is %ld", IR_value);
+    ASSERT_OK( TYGetInt (hDevice, TY_COMPONENT_LASER, TY_INT_LASER_POWER, &IR_value));    printf("IR value is: ");
+    printf("%" PRId32 "\n", IR_value);
 
     LOGD("=== Start capture");
     ASSERT_OK( TYStartCapture(hDevice) );
