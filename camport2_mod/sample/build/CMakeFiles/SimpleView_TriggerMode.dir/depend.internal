@@ -3,9 +3,9 @@
 
 CMakeFiles/SimpleView_TriggerMode.dir/SimpleView_TriggerMode/main.cpp.o
  ../../include/TY_API.h
- /home/pi/dept/camport2_mod/sample/SimpleView_TriggerMode/main.cpp
- /home/pi/dept/camport2_mod/sample/common/DepthRender.hpp
- /home/pi/dept/camport2_mod/sample/common/MatViewer.hpp
- /home/pi/dept/camport2_mod/sample/common/PointCloudViewer.hpp
- /home/pi/dept/camport2_mod/sample/common/Utils.hpp
- /home/pi/dept/camport2_mod/sample/common/common.hpp
+ /home/pi/dept_upload/camport2_mod/sample/SimpleView_TriggerMode/main.cpp
+ /home/pi/dept_upload/camport2_mod/sample/common/DepthRender.hpp
+ /home/pi/dept_upload/camport2_mod/sample/common/MatViewer.hpp
+ /home/pi/dept_upload/camport2_mod/sample/common/PointCloudViewer.hpp
+ /home/pi/dept_upload/camport2_mod/sample/common/Utils.hpp
+ /home/pi/dept_upload/camport2_mod/sample/common/common.hpp

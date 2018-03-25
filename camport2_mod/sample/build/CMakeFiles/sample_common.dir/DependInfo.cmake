@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/dept/camport2_mod/sample/common/MatViewer.cpp" "/home/pi/dept/camport2_mod/sample/build/CMakeFiles/sample_common.dir/common/MatViewer.cpp.o"
-  "/home/pi/dept/camport2_mod/sample/common/PointCloudViewer.cpp" "/home/pi/dept/camport2_mod/sample/build/CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.o"
+  "/home/pi/dept_upload/camport2_mod/sample/common/MatViewer.cpp" "/home/pi/dept_upload/camport2_mod/sample/build/CMakeFiles/sample_common.dir/common/MatViewer.cpp.o"
+  "/home/pi/dept_upload/camport2_mod/sample/common/PointCloudViewer.cpp" "/home/pi/dept_upload/camport2_mod/sample/build/CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

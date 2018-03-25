@@ -196,6 +196,10 @@ int main(int argc, char* argv[]) {
         ASSERT_OK(TYSetBool(hDevice, TY_COMPONENT_DEVICE, TY_BOOL_TRIGGER_MODE, false));
     }
 
+    //show IR val
+    int32_t IR_value;
+    ASSERT_OK( TYGetInt (hDevice, TY_COMPONENT_LASER, TY_INT_LASER_POWER, &IR_value));    printf("IR val is %ld", IR_value);
+
     LOGD("=== Start capture");
     ASSERT_OK( TYStartCapture(hDevice) );
 

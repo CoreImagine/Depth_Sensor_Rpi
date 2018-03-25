@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/dept/camport2_mod/sample/SimpleView_TriggerMode_M3S1/main.cpp" "/home/pi/dept/camport2_mod/sample/build/CMakeFiles/SimpleView_TriggerMode_M3S1.dir/SimpleView_TriggerMode_M3S1/main.cpp.o"
+  "/home/pi/dept_upload/camport2_mod/sample/SimpleView_TriggerMode_M3S1/main.cpp" "/home/pi/dept_upload/camport2_mod/sample/build/CMakeFiles/SimpleView_TriggerMode_M3S1.dir/SimpleView_TriggerMode_M3S1/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -16,7 +16,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/pi/dept/camport2_mod/sample/build/CMakeFiles/sample_common.dir/DependInfo.cmake"
+  "/home/pi/dept_upload/camport2_mod/sample/build/CMakeFiles/sample_common.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

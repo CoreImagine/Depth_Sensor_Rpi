@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/dept/camport2_mod/sample
+# Install script for directory: /home/pi/dept_upload/camport2_mod/sample
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pi/dept/camport2_mod/sample/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/pi/dept_upload/camport2_mod/sample/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

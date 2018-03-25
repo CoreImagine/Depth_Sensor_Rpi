@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/pi/dept/camport2_mod/sample/../include -I/usr/include/opencv 
+CXX_INCLUDES = -I/home/pi/dept_upload/camport2_mod/sample/../include -I/usr/include/opencv 
 

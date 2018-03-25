@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/pi/dept/camport2_mod/sample
+CMAKE_SOURCE_DIR = /home/pi/dept_upload/camport2_mod/sample
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/pi/dept/camport2_mod/sample/build
+CMAKE_BINARY_DIR = /home/pi/dept_upload/camport2_mod/sample/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/sample_common.dir/depend.make
@@ -59,16 +59,16 @@ include CMakeFiles/sample_common.dir/flags.make
 
 CMakeFiles/sample_common.dir/common/MatViewer.cpp.o: CMakeFiles/sample_common.dir/flags.make
 CMakeFiles/sample_common.dir/common/MatViewer.cpp.o: ../common/MatViewer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/dept/camport2_mod/sample/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sample_common.dir/common/MatViewer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample_common.dir/common/MatViewer.cpp.o -c /home/pi/dept/camport2_mod/sample/common/MatViewer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/dept_upload/camport2_mod/sample/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/sample_common.dir/common/MatViewer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample_common.dir/common/MatViewer.cpp.o -c /home/pi/dept_upload/camport2_mod/sample/common/MatViewer.cpp
 
 CMakeFiles/sample_common.dir/common/MatViewer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample_common.dir/common/MatViewer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/dept/camport2_mod/sample/common/MatViewer.cpp > CMakeFiles/sample_common.dir/common/MatViewer.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/dept_upload/camport2_mod/sample/common/MatViewer.cpp > CMakeFiles/sample_common.dir/common/MatViewer.cpp.i
 
 CMakeFiles/sample_common.dir/common/MatViewer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample_common.dir/common/MatViewer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/dept/camport2_mod/sample/common/MatViewer.cpp -o CMakeFiles/sample_common.dir/common/MatViewer.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/dept_upload/camport2_mod/sample/common/MatViewer.cpp -o CMakeFiles/sample_common.dir/common/MatViewer.cpp.s
 
 CMakeFiles/sample_common.dir/common/MatViewer.cpp.o.requires:
 
@@ -83,16 +83,16 @@ CMakeFiles/sample_common.dir/common/MatViewer.cpp.o.provides.build: CMakeFiles/s
 
 CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.o: CMakeFiles/sample_common.dir/flags.make
 CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.o: ../common/PointCloudViewer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/dept/camport2_mod/sample/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.o -c /home/pi/dept/camport2_mod/sample/common/PointCloudViewer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/dept_upload/camport2_mod/sample/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.o -c /home/pi/dept_upload/camport2_mod/sample/common/PointCloudViewer.cpp
 
 CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/dept/camport2_mod/sample/common/PointCloudViewer.cpp > CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/dept_upload/camport2_mod/sample/common/PointCloudViewer.cpp > CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.i
 
 CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/dept/camport2_mod/sample/common/PointCloudViewer.cpp -o CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/dept_upload/camport2_mod/sample/common/PointCloudViewer.cpp -o CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.s
 
 CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.o.requires:
 
@@ -117,7 +117,7 @@ libsample_common.a: CMakeFiles/sample_common.dir/common/MatViewer.cpp.o
 libsample_common.a: CMakeFiles/sample_common.dir/common/PointCloudViewer.cpp.o
 libsample_common.a: CMakeFiles/sample_common.dir/build.make
 libsample_common.a: CMakeFiles/sample_common.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/dept/camport2_mod/sample/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libsample_common.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/pi/dept_upload/camport2_mod/sample/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libsample_common.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/sample_common.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/sample_common.dir/link.txt --verbose=$(VERBOSE)
 
@@ -136,6 +136,6 @@ CMakeFiles/sample_common.dir/clean:
 .PHONY : CMakeFiles/sample_common.dir/clean
 
 CMakeFiles/sample_common.dir/depend:
-	cd /home/pi/dept/camport2_mod/sample/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/dept/camport2_mod/sample /home/pi/dept/camport2_mod/sample /home/pi/dept/camport2_mod/sample/build /home/pi/dept/camport2_mod/sample/build /home/pi/dept/camport2_mod/sample/build/CMakeFiles/sample_common.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/pi/dept_upload/camport2_mod/sample/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/pi/dept_upload/camport2_mod/sample /home/pi/dept_upload/camport2_mod/sample /home/pi/dept_upload/camport2_mod/sample/build /home/pi/dept_upload/camport2_mod/sample/build /home/pi/dept_upload/camport2_mod/sample/build/CMakeFiles/sample_common.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/sample_common.dir/depend
 
