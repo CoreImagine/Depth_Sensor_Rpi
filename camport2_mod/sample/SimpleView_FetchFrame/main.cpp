@@ -201,6 +201,7 @@ int main(int argc, char* argv[]) {
     int32_t IR_value;
     ASSERT_OK( TYGetInt (hDevice, TY_COMPONENT_LASER, TY_INT_LASER_POWER, &IR_value));    printf("IR value is: ");
     printf("%" PRId32 "\n", IR_value);
+    //
 
     LOGD("=== Start capture");
     ASSERT_OK( TYStartCapture(hDevice) );
@@ -243,7 +244,7 @@ int main(int argc, char* argv[]) {
 
 
     while(!exit_main) {
-	MSLEEP(260);
+	//MSLEEP(260);
 	//LOGD("Delay for 3s");
         int err = TYFetchFrame(hDevice, &frame, -1);
         if( err != TY_STATUS_OK ) {
