@@ -7,7 +7,7 @@ from PIL import Image
 
 import cv2
 import ast
-
+import json
 
 
 
@@ -38,7 +38,7 @@ with picamera.PiCamera() as camera:
     time.sleep(2)
     start = time.time()
     while True:
-    	print("==============================")
+        print("==============================")
         ##################################################
         # start transition
         #print(1)
@@ -73,41 +73,46 @@ with picamera.PiCamera() as camera:
         #print(np.min((d[0]+6000)%6001))
         #print(np.min((d[1]+6000)%6001))
         #print(np.min((d[2]+6000)%6001))
-    	DIRECTION = ['left','middle','right']
-    	save_json = {}
-    	for i in range(3):
-    		save_json[DIRECTION[i]]=[np.min((d[i]+6000)%6001)]
+        DIRECTION = ['left','middle','right']
+        save_json = {}
+        for i in range(3):
+            save_json[DIRECTION[i]]=[{"min":int(np.min((d[i]+6000)%6001))}]
         if GET:
 
-        	ADAPT_X = -40
-        	ADAPT_Y = -40   # -80     	
-	        for x in get:
-	        	n = x[0]
-	        	y1,x1 = x[1]
-	        	y2,x2 = x[2]
-	        	X1,X2,Y1,Y2 = x1,x2,y1,y2
-	        	x1,x2,y1,y2 = x1+ADAPT_X,x2+ADAPT_X,y1+ADAPT_Y,y2+ADAPT_Y
-	        	x1 = 0 if x1<0 else x1
-	        	x2 = 0 if x2<0 else x2
-	        	y1 = 0 if y1<0 else y1
-	        	y2 = 0 if y2<0 else y2
-	        	y = (Y1+Y2)/2.0
-	        	save_json[DIRECTION[np.argmax([y>=0 and y<180,y>=180 and y < 380, y >= 380])]].append([n,X1,Y1,X2,Y2,np.min((DEPTH[x1:x2,y1:y2]+6000)%6001)])
+            ADAPT_X = -40
+            ADAPT_Y = -40   # -80         
+            for x in get:
+                n = x[0]
+                y1,x1 = x[1]
+                y2,x2 = x[2]
+                x1 = 0 if x1<0 else x1
+                x2 = 0 if x2<0 else x2
+                y1 = 0 if y1<0 else y1
+                y2 = 0 if y2<0 else y2
+                X1,X2,Y1,Y2 = x1,x2,y1,y2
+                x1,x2,y1,y2 = x1+ADAPT_X,x2+ADAPT_X,y1+ADAPT_Y,y2+ADAPT_Y
+                x1 = 0 if x1<0 else x1
+                x2 = 0 if x2<0 else x2
+                y1 = 0 if y1<0 else y1
+                y2 = 0 if y2<0 else y2
+                y = (Y1+Y2)/2.0
+                #n,X1,Y1,X2,Y2,np.min((DEPTH[x1:x2,y1:y2]+6000)%6001
+                save_json[DIRECTION[np.argmax([y>=0 and y<180,y>=180 and y < 380, y >= 380])]].append({"object":n,"x1":X1,"y1":Y1,"x2":X2,"y2":Y2,"distance":int(np.min((DEPTH[x1:x2,y1:y2]+6000)%6001))})
 
 
-	        	#print(y,np.argmax([y>=0 and y<180,y>=180 and y < 380, y >= 380]))
+                #print(y,np.argmax([y>=0 and y<180,y>=180 and y < 380, y >= 380]))
 
-	        	#print(n,x1,x2,y1,y2)
-	        	#print(np.shape(DEPTH[x1:x2,y1:y2]))
-	        	#print(np.min((DEPTH[x1:x2,y1:y2]+6000)%6001))
+                #print(n,x1,x2,y1,y2)
+                #print(np.shape(DEPTH[x1:x2,y1:y2]))
+                #print(np.min((DEPTH[x1:x2,y1:y2]+6000)%6001))
 
 
 
-	        	#print('-------')
-	        	cv2.rectangle(DEPTH, (y1, x1), (y2, x2),[6000,6000,6000], 2)
-	        	cv2.putText(DEPTH, n, (y1+10, x1+10),cv2.FONT_HERSHEY_SIMPLEX, 0.5, [6000,6000,6000], 2)
+                #print('-------')
+                cv2.rectangle(DEPTH, (y1, x1), (y2, x2),[6000,6000,6000], 2)
+                cv2.putText(DEPTH, n, (y1+10, x1+10),cv2.FONT_HERSHEY_SIMPLEX, 0.5, [6000,6000,6000], 2)
 
-	        
+            
 
 
         
@@ -115,7 +120,7 @@ with picamera.PiCamera() as camera:
             depth_img = d[i]/6000.0*255
             img = Image.fromarray(depth_img).convert('RGB')
             img.save("depth_{}.jpg".format(i))
-		
+        
 
         depth_img = DEPTH/6000.0*255
         img = Image.fromarray(depth_img).convert('RGB')
@@ -123,6 +128,8 @@ with picamera.PiCamera() as camera:
 
 
         print(save_json)
+        with open('info.json', 'w') as f:
+            json.dump(save_json, f)
 
         #with open("dep.txt","wb") as f:
         #    f.write(str(depth))
