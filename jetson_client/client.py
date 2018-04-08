@@ -58,36 +58,25 @@ while True:
 	# 開始接收
 	print('begin write image file')
 
-	#print(1)
-
 	s= time.time()
 	imgFile = open('test.jpg', 'wb')  # 開始寫入圖片檔
-	#print(2)
-	#socket02.send(b'gogogo')
 	send_data = b'gogogo' if data == [] else str.encode(str(data))
 	socket02.send(send_data)
 	data = []
 	last_img_Data = str.encode(str([]))
-	#print(3)
+
 	while True:
 	    imgData = socket02.recv(512)  # 接收遠端主機傳來的數據
-	    #print('================')
-	    #print(imgData[-4:],imgData[-4:]==b'fuck')
-	    #print('@@@',last_img_Data[-4:]+imgData[-4:])
-	    #print((last_img_Data[-4:]+imgData[-4:])[-4:])
 	    if (last_img_Data[-4:]+imgData[-4:])[-4:]==b'fuck':
 	    	break
 	    imgFile.write(imgData)
 	    last_img_Data = imgData
 	imgFile.close()
-	#print(4)
-	###
 	time.sleep(0.2)
 	try:
 		image = cv2.imread('test.jpg')
 		image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-		#image = scipy.misc.imread('test.jpg')
-		#print(image)	
+
 		(h, w) = image.shape[:2]
 		blob = cv2.dnn.blobFromImage(cv2.resize(image, (300, 300)), 0.007843, (300, 300), 127.5)
 		net.setInput(blob)
@@ -102,7 +91,6 @@ while True:
 
 				# display the prediction
 				label = "{}: {:.2f}%".format(CLASSES[idx], confidence * 100)
-				#print("{}".format(label),(startX, startY), (endX, endY))
 				data.append([CLASSES[idx],(startX, startY), (endX, endY)])
 				cv2.rectangle(image, (startX, startY), (endX, endY),COLORS[idx], 2)
 				y = startY - 15 if startY - 15 > 15 else startY + 15

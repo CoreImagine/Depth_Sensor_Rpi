@@ -11,9 +11,9 @@ import json
 
 
 
-#/home/pi/Depth_Sensor_Rpi/camport2_mod/sample/build/bin/SimpleView_FetchFrame
-#server
-#client
+#1. /home/pi/Depth_Sensor_Rpi/camport2_mod/sample/build/bin/SimpleView_FetchFrame
+#2. server
+#3. client
 
 host = '192.168.1.13'  # server address
 port = int(sys.argv[1])
@@ -70,9 +70,7 @@ with picamera.PiCamera() as camera:
         d.append(depth[:,:180])
         d.append(depth[:,180:380])
         d.append(depth[:,380:])
-        #print(np.min((d[0]+6000)%6001))
-        #print(np.min((d[1]+6000)%6001))
-        #print(np.min((d[2]+6000)%6001))
+
         DIRECTION = ['left','middle','right']
         save_json = {}
         for i in range(3):
@@ -96,19 +94,9 @@ with picamera.PiCamera() as camera:
                 y1 = 0 if y1<0 else y1
                 y2 = 0 if y2<0 else y2
                 y = (Y1+Y2)/2.0
-                #n,X1,Y1,X2,Y2,np.min((DEPTH[x1:x2,y1:y2]+6000)%6001
+
                 save_json[DIRECTION[np.argmax([y>=0 and y<180,y>=180 and y < 380, y >= 380])]].append({"object":n,"x1":X1,"y1":Y1,"x2":X2,"y2":Y2,"distance":int(np.min((DEPTH[x1:x2,y1:y2]+6000)%6001))})
 
-
-                #print(y,np.argmax([y>=0 and y<180,y>=180 and y < 380, y >= 380]))
-
-                #print(n,x1,x2,y1,y2)
-                #print(np.shape(DEPTH[x1:x2,y1:y2]))
-                #print(np.min((DEPTH[x1:x2,y1:y2]+6000)%6001))
-
-
-
-                #print('-------')
                 cv2.rectangle(DEPTH, (y1, x1), (y2, x2),[6000,6000,6000], 2)
                 cv2.putText(DEPTH, n, (y1+10, x1+10),cv2.FONT_HERSHEY_SIMPLEX, 0.5, [6000,6000,6000], 2)
 
@@ -131,11 +119,7 @@ with picamera.PiCamera() as camera:
         with open('info.json', 'w') as f:
             json.dump(save_json, f)
 
-        #with open("dep.txt","wb") as f:
-        #    f.write(str(depth))
 
-        #edges = cv2.Canny(depth,100,200)
-        #scipy.misc.imsave('edge.jpg', edges)
 ################
 
         while True:
